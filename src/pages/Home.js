@@ -31,7 +31,7 @@ export function Home() {
             />
 
             <TouchableOpacity 
-                style={styles.button}
+                style={styles.addBtn}
                 activeOpacity={0.7}
                 onPress={handleAddNewSkill}
             >
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
         borderRadius: 7
     },
-    button: {
+    addBtn: {
         backgroundColor: '#A370F7',
         padding: 15,
         marginVertical: 15,
@@ -92,7 +92,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#1F1E25',
         padding: 15,
         borderRadius: 50,
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 15
     },
     skillText: {
         color: '#fff',
