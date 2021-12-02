@@ -7,6 +7,7 @@ import {
     Platform,
     TouchableOpacity
 } from 'react-native';
+import { Button } from '../components/Button';
 
 
 export function Home() {
@@ -30,13 +31,7 @@ export function Home() {
                 onChangeText={setNewSkill}
             />
 
-            <TouchableOpacity 
-                style={styles.addBtn}
-                activeOpacity={0.7}
-                onPress={handleAddNewSkill}
-            >
-                <Text style={styles.buttonText}>Add</Text>
-            </TouchableOpacity>
+            <Button />
 
             <Text style={[styles.title, { marginVertical: 40}]}>
                 My Skills
