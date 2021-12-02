@@ -14,7 +14,7 @@ export function Home() {
     const [mySkills, setMySkills] = useState([]);
 
     const handleAddNewSkill = () => {
-        setMySkills(oldState => [...oldState, newSkill]);
+        if(newSkill) setMySkills(oldState => [...oldState, newSkill]);
     }
 
     return (
