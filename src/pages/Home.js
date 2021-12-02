@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -10,6 +10,13 @@ import {
 
 
 export function Home() {
+    const [newSkill, setNewSkill] = useState('');
+    const [mySkills, setMySkills] = useState([]);
+
+    const handleAddNewSkill = () => {
+        setMySkills(oldState => [...oldState, newSkill]);
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}> 
@@ -20,18 +27,30 @@ export function Home() {
                 style={styles.textInput}
                 placeholder="New Skill"
                 placeholderTextColor="#666"
+                onChangeText={setNewSkill}
             />
 
             <TouchableOpacity 
                 style={styles.button}
                 activeOpacity={0.7}
+                onPress={handleAddNewSkill}
             >
                 <Text style={styles.buttonText}>Add</Text>
             </TouchableOpacity>
 
-            <Text style={[styles.title, { marginTop: 10}]}>
+            <Text style={[styles.title, { marginVertical: 40}]}>
                 My Skills
             </Text>
+
+            {
+                mySkills.map((skill, index) => (
+                    <TouchableOpacity style={styles.skillBtn} key={index}>
+                        <Text style={styles.skillText}>
+                            { skill }
+                        </Text>
+                    </TouchableOpacity>
+                ))
+            }
         </View>
     )
 }
@@ -68,5 +87,15 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 18,
         fontWeight: 'bold'
+    },
+    skillBtn: {
+        backgroundColor: '#1F1E25',
+        padding: 15,
+        borderRadius: 50,
+        alignItems: 'center'
+    },
+    skillText: {
+        color: '#fff',
+        fontSize: 22,
     }
 });
