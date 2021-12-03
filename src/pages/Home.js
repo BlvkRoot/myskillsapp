@@ -8,6 +8,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import { Button } from '../components/Button';
+import { SkillCard } from '../components/SkillCard';
 
 
 export function Home() {
@@ -39,11 +40,7 @@ export function Home() {
 
             {
                 mySkills.map((skill, index) => (
-                    <TouchableOpacity style={styles.skillBtn} key={index}>
-                        <Text style={styles.skillText}>
-                            { skill }
-                        </Text>
-                    </TouchableOpacity>
+                    <SkillCard />
                 ))
             }
         </View>
