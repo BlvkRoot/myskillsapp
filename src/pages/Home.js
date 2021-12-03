@@ -5,7 +5,7 @@ import {
     TextInput, 
     StyleSheet,
     Platform,
-    TouchableOpacity
+    ScrollView
 } from 'react-native';
 import { Button } from '../components/Button';
 import { SkillCard } from '../components/SkillCard';
@@ -38,11 +38,13 @@ export function Home() {
                 My Skills
             </Text>
 
-            {
-                mySkills.map((skill, index) => (
-                    <SkillCard skill={skill} index={index} />
-                ))
-            }
+            <ScrollView>
+                {
+                    mySkills.map((skill, index) => (
+                        <SkillCard skill={skill} index={index} />
+                    ))
+                }
+            </ScrollView>
         </View>
     )
 }
